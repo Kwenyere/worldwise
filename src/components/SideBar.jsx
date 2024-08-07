@@ -7,6 +7,7 @@ function SideBar() {
     <div className={styles.sidebar}>
       <Logo />
       <AppNav />
+      {/* The outlet component provided by react router is used to display a nested component */}
       <Outlet />
       <footer className={styles.footer}>
         <p className={styles.copyright}>

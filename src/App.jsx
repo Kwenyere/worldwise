@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Product from "./pages/product";
+import Product from "./pages/Product";
 import Pricing from "./pages/Pricing";
 import Homepage from "./pages/Homepage";
 import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./pages/AppLayout";
+import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -15,7 +16,7 @@ function App() {
     async function fetchCities() {
       try {
         setIsLoading(true);
-        const res = await fetch("http://localhost:9000/cities");
+        const res = await fetch("http://localhost:4000/cities");
         const data = await res.json();
         setCities(data);
       } catch {
@@ -33,6 +34,7 @@ function App() {
         <Route index element={<Homepage />} />
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
+        <Route path="/login" element={<Login />} />
         <Route path="app" element={<AppLayout />}>
           {/* Index ROUTES */}
           <Route

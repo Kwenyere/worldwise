@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import { useState } from "react";
 import { useEffect } from "react";
+import CountryList from "./components/CountryList";
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -46,7 +47,10 @@ function App() {
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
           />
-          <Route path="countries" element={<p>Countries</p>} />
+          <Route
+            path="countries"
+            element={<CountryList cities={cities} isLoading={isLoading} />}
+          />
           <Route path="form" element={<p>form</p>} />
         </Route>
         {/* if there is no one matching the router */}
